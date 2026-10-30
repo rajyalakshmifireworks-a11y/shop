@@ -1,0 +1,450 @@
+[
+  {
+    "id": "P001",
+    "name": "Spinner Spl",
+    "cat": "Chakkar & Spinners",
+    "price": 130,
+    "mrp": 162,
+    "stock": 10
+  },
+  {
+    "id": "P002",
+    "name": "Spinner Dlx",
+    "cat": "Chakkar & Spinners",
+    "price": 480,
+    "mrp": 600,
+    "stock": 10
+  },
+  {
+    "id": "P003",
+    "name": "Wire Chakkar",
+    "cat": "Chakkar & Spinners",
+    "price": 400,
+    "mrp": 500,
+    "stock": 10
+  },
+  {
+    "id": "P004",
+    "name": "4x4 Wheel",
+    "cat": "Chakkar & Spinners",
+    "price": 280,
+    "mrp": 350,
+    "stock": 5
+  },
+  {
+    "id": "P005",
+    "name": "Madura Malli",
+    "cat": "Flower Pots",
+    "price": 520,
+    "mrp": 650,
+    "stock": 10
+  },
+  {
+    "id": "P006",
+    "name": "Sky Army",
+    "cat": "Aerial & Fancy",
+    "price": 520,
+    "mrp": 650,
+    "stock": 10
+  },
+  {
+    "id": "P007",
+    "name": "Kutralam",
+    "cat": "Flower Pots",
+    "price": 400,
+    "mrp": 500,
+    "stock": 5
+  },
+  {
+    "id": "P008",
+    "name": "1 Kg",
+    "cat": "Others",
+    "price": 380,
+    "mrp": 475,
+    "stock": 10
+  },
+  {
+    "id": "P009",
+    "name": "Agni Bomb",
+    "cat": "Bombs & Crackers",
+    "price": 400,
+    "mrp": 500,
+    "stock": 10
+  },
+  {
+    "id": "P010",
+    "name": "Cylinder",
+    "cat": "Bombs & Crackers",
+    "price": 400,
+    "mrp": 500,
+    "stock": 10
+  },
+  {
+    "id": "P011",
+    "name": "Color Kotti Dlx",
+    "cat": "Flower Pots",
+    "price": 800,
+    "mrp": 1000,
+    "stock": 10
+  },
+  {
+    "id": "P012",
+    "name": "Mega Color Kotti",
+    "cat": "Flower Pots",
+    "price": 1200,
+    "mrp": 1500,
+    "stock": 10
+  },
+  {
+    "id": "P013",
+    "name": "Spinner Super Dlx",
+    "cat": "Chakkar & Spinners",
+    "price": 600,
+    "mrp": 750,
+    "stock": 10
+  },
+  {
+    "id": "P014",
+    "name": "Helicopter",
+    "cat": "Chakkar & Spinners",
+    "price": 300,
+    "mrp": 375,
+    "stock": 10
+  },
+  {
+    "id": "P015",
+    "name": "Bambaram",
+    "cat": "Chakkar & Spinners",
+    "price": 200,
+    "mrp": 250,
+    "stock": 10
+  },
+  {
+    "id": "P016",
+    "name": "3 Sound",
+    "cat": "Bombs & Crackers",
+    "price": 90,
+    "mrp": 112,
+    "stock": 50
+  },
+  {
+    "id": "P017",
+    "name": "240 Shot",
+    "cat": "Aerial & Fancy",
+    "price": 7000,
+    "mrp": 8750,
+    "stock": 2
+  },
+  {
+    "id": "P018",
+    "name": "KZ Rocket",
+    "cat": "Rockets",
+    "price": 320,
+    "mrp": 400,
+    "stock": 10
+  },
+  {
+    "id": "P019",
+    "name": "2 Sound Rocket",
+    "cat": "Rockets",
+    "price": 300,
+    "mrp": 375,
+    "stock": 20
+  },
+  {
+    "id": "P020",
+    "name": "Rocket Bomb",
+    "cat": "Rockets",
+    "price": 200,
+    "mrp": 250,
+    "stock": 15
+  },
+  {
+    "id": "P021",
+    "name": "Jalli Kettu",
+    "cat": "Bombs & Crackers",
+    "price": 100,
+    "mrp": 125,
+    "stock": 20
+  },
+  {
+    "id": "P022",
+    "name": "4'' Dlx Laxmi",
+    "cat": "Bombs & Crackers",
+    "price": 80,
+    "mrp": 100,
+    "stock": 50
+  },
+  {
+    "id": "P023",
+    "name": "4'' Laxmi",
+    "cat": "Bombs & Crackers",
+    "price": 60,
+    "mrp": 75,
+    "stock": 60
+  },
+  {
+    "id": "P024",
+    "name": "10x10 Mix",
+    "cat": "Gift Boxes",
+    "price": 7000,
+    "mrp": 8750,
+    "stock": 3
+  },
+  {
+    "id": "P025",
+    "name": "6'' Fancy 2 Pcs",
+    "cat": "Aerial & Fancy",
+    "price": 3200,
+    "mrp": 4000,
+    "stock": 5
+  },
+  {
+    "id": "P026",
+    "name": "5'' Fancy 2 Pcs",
+    "cat": "Aerial & Fancy",
+    "price": 2800,
+    "mrp": 3500,
+    "stock": 5
+  },
+  {
+    "id": "P027",
+    "name": "7 Skep",
+    "cat": "Aerial & Fancy",
+    "price": 1000,
+    "mrp": 1250,
+    "stock": 5
+  },
+  {
+    "id": "P028",
+    "name": "Wizz Color",
+    "cat": "Aerial & Fancy",
+    "price": 1400,
+    "mrp": 1750,
+    "stock": 4
+  },
+  {
+    "id": "P029",
+    "name": "12 Shot",
+    "cat": "Aerial & Fancy",
+    "price": 360,
+    "mrp": 450,
+    "stock": 10
+  },
+  {
+    "id": "P030",
+    "name": "50 Wizz",
+    "cat": "Chakkar & Spinners",
+    "price": 3000,
+    "mrp": 3750,
+    "stock": 3
+  },
+  {
+    "id": "P031",
+    "name": "15 Multi Color",
+    "cat": "Aerial & Fancy",
+    "price": 560,
+    "mrp": 700,
+    "stock": 5
+  },
+  {
+    "id": "P032",
+    "name": "120 Shot",
+    "cat": "Aerial & Fancy",
+    "price": 3200,
+    "mrp": 4000,
+    "stock": 3
+  },
+  {
+    "id": "P033",
+    "name": "5K Full Count",
+    "cat": "Bombs & Crackers",
+    "price": 1932,
+    "mrp": 2415,
+    "stock": 3
+  },
+  {
+    "id": "P034",
+    "name": "2K Full Count",
+    "cat": "Bombs & Crackers",
+    "price": 780,
+    "mrp": 975,
+    "stock": 5
+  },
+  {
+    "id": "P035",
+    "name": "10K Full Count",
+    "cat": "Bombs & Crackers",
+    "price": 3864,
+    "mrp": 4830,
+    "stock": 3
+  },
+  {
+    "id": "P036",
+    "name": "AJ Colour Sparklers Ultra Deluxe",
+    "cat": "Sparklers",
+    "price": 372,
+    "mrp": 465,
+    "stock": 20
+  },
+  {
+    "id": "P037",
+    "name": "UN 50 cm Electric",
+    "cat": "Sparklers",
+    "price": 230,
+    "mrp": 288,
+    "stock": 50
+  },
+  {
+    "id": "P038",
+    "name": "888 Hand Shots",
+    "cat": "Aerial & Fancy",
+    "price": 3840,
+    "mrp": 4800,
+    "stock": 3
+  },
+  {
+    "id": "P039",
+    "name": "150 Hand Shots",
+    "cat": "Aerial & Fancy",
+    "price": 1400,
+    "mrp": 1750,
+    "stock": 7
+  },
+  {
+    "id": "P040",
+    "name": "40 Hand Shots",
+    "cat": "Aerial & Fancy",
+    "price": 860,
+    "mrp": 1075,
+    "stock": 10
+  },
+  {
+    "id": "P041",
+    "name": "KA FP Ashoka UV",
+    "cat": "Flower Pots",
+    "price": 160,
+    "mrp": 200,
+    "stock": 20
+  },
+  {
+    "id": "P042",
+    "name": "SAR FP Color Koti Dlx",
+    "cat": "Flower Pots",
+    "price": 460,
+    "mrp": 575,
+    "stock": 15
+  },
+  {
+    "id": "P043",
+    "name": "MUR 15 cm Sada",
+    "cat": "Sparklers",
+    "price": 48,
+    "mrp": 60,
+    "stock": 100
+  },
+  {
+    "id": "P044",
+    "name": "NL 30cm Colour",
+    "cat": "Sparklers",
+    "price": 53,
+    "mrp": 66,
+    "stock": 100
+  },
+  {
+    "id": "P045",
+    "name": "WOW FP Volcano Pots",
+    "cat": "Flower Pots",
+    "price": 870,
+    "mrp": 1088,
+    "stock": 10
+  },
+  {
+    "id": "P046",
+    "name": "SAR Mega Dlx 100",
+    "cat": "Aerial & Fancy",
+    "price": 550,
+    "mrp": 688,
+    "stock": 15
+  },
+  {
+    "id": "P047",
+    "name": "SKV 7 shot 5pec",
+    "cat": "Aerial & Fancy",
+    "price": 150,
+    "mrp": 188,
+    "stock": 15
+  },
+  {
+    "id": "P048",
+    "name": "SVL Water Falls 5 Pcs",
+    "cat": "Flower Pots",
+    "price": 260,
+    "mrp": 325,
+    "stock": 10
+  },
+  {
+    "id": "P049",
+    "name": "Dazzle Bada Peacock",
+    "cat": "Flower Pots",
+    "price": 550,
+    "mrp": 688,
+    "stock": 10
+  },
+  {
+    "id": "P050",
+    "name": "OS 18cm Pencil",
+    "cat": "Sparklers",
+    "price": 130,
+    "mrp": 162,
+    "stock": 20
+  },
+  {
+    "id": "P051",
+    "name": "Nuclear Bomb",
+    "cat": "Bombs & Crackers",
+    "price": 400,
+    "mrp": 500,
+    "stock": 5
+  },
+  {
+    "id": "P052",
+    "name": "4 Inch S twinkling mega star",
+    "cat": "Aerial & Fancy",
+    "price": 90,
+    "mrp": 112,
+    "stock": 30
+  },
+  {
+    "id": "P053",
+    "name": "Yes Bro 10K Wala Full count",
+    "cat": "Bombs & Crackers",
+    "price": 5400,
+    "mrp": 6750,
+    "stock": 2
+  },
+  {
+    "id": "P054",
+    "name": "Pencils",
+    "cat": "Sparklers",
+    "price": 200,
+    "mrp": 250,
+    "stock": 30
+  },
+  {
+    "id": "P055",
+    "name": "Ajanta Sky Chakkar",
+    "cat": "Chakkar & Spinners",
+    "price": 700,
+    "mrp": 875,
+    "stock": 5
+  },
+  {
+    "id": "P056",
+    "name": "Zameen Chakkar 45cm",
+    "cat": "Chakkar & Spinners",
+    "price": 400,
+    "mrp": 500,
+    "stock": 5
+  }
+]

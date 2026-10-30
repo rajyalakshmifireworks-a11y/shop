@@ -28,3 +28,14 @@ BEFORE SHARING WIDELY
   - Check your firecracker licence and your state's rules on selling online.
   - Do a test order and confirm it reaches +91 91822 86897.
   - After WhatsApp share, WhatsApp may cache the preview for a day.
+
+PDF CATALOGUE ADDITIONS (30 October 2026)
+  20 confirmed missing products from RFW 2026 A.pdf added as P057-P076.
+  Existing product prices, stock quantities, names and family combos are unchanged.
+  New entries show the PDF selling price and pack size, with no invented MRP.
+  stock:null plus availability:"confirm" allows order enquiries (up to 99 packs),
+  but shows "Availability on confirmation" and flags the WhatsApp message.
+  Set stock to a verified integer to replace this pending-availability state.
+  Products without an approved image show a "Photo coming soon" placeholder.
+  Do not add the 14 uncertain matches as duplicates without checking variants.
+  Current live URL: https://rajyalakshmifireworks-a11y.github.io/shop/
