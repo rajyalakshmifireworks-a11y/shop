@@ -27,23 +27,23 @@ function app(savedCart = {}) {
 test('adds exactly the 20 missing PDF products without changing the original 56', () => {
   const a = app();
   const products = JSON.parse(a.run('JSON.stringify(PRODUCTS)'));
-  assert.equal(products.length,76);
+  assert.equal(products.length,78);
   for (const old of original) {
     const current=products.find(p=>p.id===old.id);
     for(const [key,value] of Object.entries(old)) assert.deepEqual(current[key],value,`${old.id} ${key}`);
   }
-  assert.deepEqual(products.filter(p=>Number(p.id.slice(1))>=57),additions);
+  for(const expected of additions){const actual=products.find(p=>p.id===expected.id);for(const [key,value] of Object.entries(expected))assert.deepEqual(actual[key],value,`${expected.id} ${key}`);}
   assert.deepEqual(additions.map(p=>p.price),[20,70,60,65,70,170,100,2000,40,380,10,10,60,250,60,250,320,360,400,1520]);
-  assert.equal(new Set(products.map(p=>p.id)).size,76);
+  assert.equal(new Set(products.map(p=>p.id)).size,78);
 });
 test('new items have packs and honest availability with no fabricated MRP or discount', () => {
   const a = app();
   const grid=a.element('grid').innerHTML;
-  assert.equal((grid.match(/Availability on confirmation/g)||[]).length,20);
+  assert.equal((grid.match(/Availability on confirmation/g)||[]).length,22);
   for(const p of additions) {assert.ok(p.pack);assert.equal(p.stock,null);assert.equal(p.mrp,null);}
   a.run('query="bird";grid()');
   const card=a.element('grid').innerHTML;
-  assert.match(card,/5 pcs per pack/);assert.match(card,/₹20/);assert.match(card,/Photo coming soon/);
+  assert.match(card,/5 pcs per pack/);assert.match(card,/₹20/);assert.match(card,/Category illustration/);assert.match(card,/images\/category-bombs.jpg/);assert.doesNotMatch(card,/coming soon/i);
   assert.doesNotMatch(card,/class="mrp"|class="tag"|Only .* left|In stock/);
   assert.ok(!html.includes('Flat 20% off on every item'));
 });
@@ -80,4 +80,23 @@ test('existing-only orders keep their normal wording and prices', () => {
   a.element('send').onclick();
   const message=new URL(a.context.window.location.href).searchParams.get('text');
   assert.match(message,/15 Multi Color x1 = ₹560/);assert.doesNotMatch(message,/confirm stock|per pack/);
+});
+
+test('poster diya combos preserve contents and prices in cards, cart and WhatsApp', () => {
+  const a=app({P077:1,P078:2});
+  a.run('cat="LED Diyas";grid()');
+  const grid=a.element('grid').innerHTML;
+  assert.equal((grid.match(/class="card"/g)||[]).length,2);
+  assert.match(grid,/1 Shivling \+ 2 elephants \+ 6 diyas/);
+  assert.match(grid,/1 Shivling \+ 12 diyas/);
+  assert.match(grid,/₹410/);assert.match(grid,/₹370/);
+  assert.doesNotMatch(grid,/class="mrp"|class="tag"|In stock/);
+  assert.equal(a.run('total()'),1150);
+  assert.equal(a.element('sub').textContent,'View cart');
+  for(const [id,value] of Object.entries({nm:'Test Customer',ph:'9876543210',ad:'Test delivery address',pn:'500001'})) a.element(id).value=value;
+  a.element('send').onclick();
+  const message=new URL(a.context.window.location.href).searchParams.get('text');
+  assert.match(message,/Elephant Combo \(1 Shivling \+ 2 elephants \+ 6 diyas per pack\) x1 = ₹410/);
+  assert.match(message,/12 Diya Combo \(1 Shivling \+ 12 diyas per pack\) x2 = ₹740/);
+  assert.match(message,/Total: ₹1,150/);
 });

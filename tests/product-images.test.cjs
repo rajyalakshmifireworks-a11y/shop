@@ -20,10 +20,14 @@ test('4x4 Wheel uses exactly the supplied product photo, not another product or 
   assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), '0d1159643d27cea80c9c71e70c5355af3acb78cdb546f4bd6e388315eac8dd0a');
 });
 test('catalogue stays intact and all mapped product images exist', () => {
-  assert.equal(products.length, 76);
-  assert.equal(new Set(products.map(p => p.id)).size, 76);
-  for (const product of products) for (const image of product.imgs || []) {
+  assert.equal(products.length, 78);
+  assert.equal(new Set(products.map(p => p.id)).size, 78);
+  assert.ok(!/coming soon/i.test(html));
+  for (const product of products) {
+    assert.ok(product.imgs?.length, `${product.name}: no picture`);
+    for (const image of product.imgs) {
     assert.ok(fs.existsSync(path.join(root, image)), `${product.name}: missing ${image}`);
+    }
   }
 });
 test('store script parses and retains Rajyalakshmi contact and share URLs', () => {

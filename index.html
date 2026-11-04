@@ -63,7 +63,10 @@ input:focus,textarea:focus,button:focus-visible{outline:2px solid var(--gold);ou
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:8px 14px}
 .card{min-width:0;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 3px 12px rgba(53,28,12,.04)}
 .pic{aspect-ratio:4/5;background:var(--tile);display:grid;place-items:center;font-size:56px;position:relative}
-.photo-placeholder{display:grid;place-items:center;gap:10px;text-align:center;padding:14px}.photo-placeholder small{font-size:12px;font-family:Hind,system-ui,sans-serif;color:var(--mute)}
+/* Display each combo photograph from the supplied poster without altering its source. */
+.diya-photo{position:relative;overflow:hidden;width:100%;aspect-ratio:530/455;background:#fff}
+.pic .diya-photo img{position:absolute;width:169.812%;height:auto;max-width:none;left:-9.434%;top:-109.89%}
+.pic .diya-photo.diya-twelve img{left:-60.377%;top:-206.593%}
 .pic img{width:100%;height:100%;object-fit:cover}
 .pic.out{opacity:.5}
 .car{display:flex;width:100%;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
@@ -266,7 +269,9 @@ const PRODUCTS = [
   {"id":"P073","name":"Lolli Pop","cat":"Novelties","pack":"5 pcs","price":320,"mrp":null,"stock":null,"availability":"confirm"},
   {"id":"P074","name":"Rotating Sparklers","cat":"Sparklers","pack":"1 pc","price":360,"mrp":null,"stock":null,"availability":"confirm"},
   {"id":"P075","name":"Bat Ball","cat":"Novelties","pack":"1 pc","price":400,"mrp":null,"stock":null,"availability":"confirm"},
-  {"id":"P076","name":"51 Items Gift Box","cat":"Gift Boxes","pack":"1 box","price":1520,"mrp":null,"stock":null,"availability":"confirm"}
+  {"id":"P076","name":"51 Items Gift Box","cat":"Gift Boxes","pack":"1 box","price":1520,"mrp":null,"stock":null,"availability":"confirm"},
+  {"id":"P077","name":"Water LED Sensor Diya — Elephant Combo","cat":"LED Diyas","pack":"1 Shivling + 2 elephants + 6 diyas","price":410,"mrp":null,"stock":null,"availability":"confirm"},
+  {"id":"P078","name":"Water LED Sensor Diya — 12 Diya Combo","cat":"LED Diyas","pack":"1 Shivling + 12 diyas","price":370,"mrp":null,"stock":null,"availability":"confirm"}
 ];
 const COMBOS=[
   {id:"family-1000",name:"Family Starter",budget:1000,kids:"Sparklers & pencils",elders:"Flower pot & waterfall",items:{P001:1,P041:1,P043:3,P044:2,P048:1,P054:1}},
@@ -278,7 +283,14 @@ const COMBOS=[
 const IMG={P004:"images/P004.png",P011:"images/P011.webp",P012:"images/P012.webp",P021:"images/P021.webp",P028:"images/P028.webp",P030:"images/P030.webp",P042:"images/P042.webp",P045:"images/P045.webp",P051:"images/P051.webp",P019:"images/P019.webp",P022:"images/P022.webp",P033:"images/P033.webp",P034:"images/P034.webp",P035:"images/P035.webp",P053:"images/P053.webp",P041:"images/P041.webp",P047:"images/P047.webp",P044:"images/P044.webp",P048:"images/P048.webp",P054:"images/P054.webp",P013:"images/P013.webp",P032:"images/P032.webp",P003:"images/P003.webp",P028b:"images/P028b.webp",P005:"images/P005.webp",P052:"images/P052.webp",P040:"images/P040.webp",P038:"images/P038.webp",P049:"images/P049.webp",P029:"images/P029.webp",P024:"images/P024.webp",P031:"images/P031.webp",P006a:"images/P006a.webp",P006b:"images/P006b.webp",P006c:"images/P006c.webp",P006d:"images/P006d.webp",P006e:"images/P006e.webp",P006f:"images/P006f.webp",P006g:"images/P006g.webp",P009:"images/P009.webp",P016:"images/P016.webp",P032b:"images/P032b.webp",A_jenis:"images/A_jenis.webp",A_shower:"images/A_shower.webp",A_zooper:"images/A_zooper.webp",A_whistle:"images/A_whistle.webp",A_hellboy:"images/A_hellboy.webp",A_longtubes:"images/A_longtubes.webp",A_unico:"images/A_unico.webp",A_elec15:"images/A_elec15.webp",A_ajanta:"images/A_ajanta.webp",P008:"images/P008.webp",P014:"images/P014.webp",P007:"images/P007.webp"};
 const IMGMAP={P011:"P011",P012:"P012",P021:"P021",P028:["P028b","P028"],P030:"P030",P042:"P042",P045:"P045",P051:"P051",P019:"P019",P022:"P022",P023:"P022",P033:"P033",P034:"P034",P035:"P035",P053:"P053",P041:"P041",P047:"P047",P044:"P044",P048:"P048",P054:"P054",P013:"P013",P032:["P032b","P032"],P003:"P003",P005:"P005",P052:"P052",P040:"P040",P038:"P038",P049:"P049",P029:"P029",P024:"P024",P031:"P031",P006:["P006a","P006b","P006c","P006d","P006e","P006f","P006g"],P009:"P009",P016:"P016",P001:"A_jenis",P002:"P013",P004:"P004",P015:"A_jenis",P055:"P013",P056:"P003",P007:"P007",P010:"A_shower",P017:"A_zooper",P018:"A_whistle",P020:"A_hellboy",P025:"A_longtubes",P026:"P038",P027:"P047",P036:"P044",P037:"A_unico",P043:"A_elec15",P050:"P054",P039:"A_ajanta",P046:"P028b",P008:"P008",P014:"P014"};
 const ALT=new Set(['P001', 'P002', 'P004', 'P015', 'P055', 'P056', 'P010', 'P017', 'P018', 'P020', 'P025', 'P026', 'P027', 'P036', 'P037', 'P043', 'P050', 'P039', 'P046']);
-PRODUCTS.forEach(p=>{const m=IMGMAP[p.id];if(m)p.imgs=[].concat(m).map(k=>IMG[k])});
+const CATEGORY_IMAGES={"Bombs & Crackers":"bombs","Natu Bombs":"bombs","Walas":"bombs","Rockets":"rockets","Aerial & Fancy":"aerial","Sparklers":"sparklers","Flower Pots":"flowerpots","Chakkar & Spinners":"chakkars","Gift Boxes":"giftboxes","Novelties":"kids"};
+const CATEGORY_OVERRIDES={P060:"rockets",P062:"rockets",P070:"rockets"};
+PRODUCTS.forEach(p=>{
+  const m=IMGMAP[p.id];
+  if(m)p.imgs=[].concat(m).map(k=>IMG[k]);
+  else if(p.cat==="LED Diyas")p.imgs=["images/water-led-diya-combos.png"];
+  else{p.imgs=[`images/category-${CATEGORY_OVERRIDES[p.id]||CATEGORY_IMAGES[p.cat]||"giftboxes"}.jpg`];p.categoryIllustration=true;}
+});
 const $=id=>document.getElementById(id);
 const money=n=>CONFIG.currency+n.toLocaleString("en-IN");
 let cart={},cat="All",query="";
@@ -320,15 +332,15 @@ function ctl(p){
           :`<button class="add" data-d="1" data-i="${p.id}">Add</button>`;
 }
 function pic(p){
-  if(!p.imgs)return `<span class="photo-placeholder"><span aria-hidden="true">${EMOJI[p.cat]||"🎆"}</span><small>Photo coming soon</small></span>`;
-  const im=p.imgs.map((s,i)=>`<img src="${s}" alt="${p.name} photo ${i+1}" loading="lazy">`).join("");
+  if(p.cat==="LED Diyas")return `<div class="diya-photo ${p.id==="P078"?"diya-twelve":""}"><img src="${p.imgs[0]}" alt="${p.name}: ${p.pack}" loading="lazy"></div>`;
+  const im=p.imgs.map((s,i)=>`<img src="${s}" alt="${p.categoryIllustration?`${p.cat} category illustration for ${p.name}`:`${p.name} photo ${i+1}`}" loading="lazy">`).join("");
   if(p.imgs.length<2)return im;
   return `<div class="car">${im}</div><div class="dots">${p.imgs.map((_,i)=>`<i class="${i?"":"on"}"></i>`).join("")}</div>`;
 }
 document.addEventListener("scroll",e=>{const c=e.target;if(c.classList&&c.classList.contains("car")){const n=Math.round(c.scrollLeft/c.clientWidth);[...c.nextElementSibling.children].forEach((d,i)=>d.classList.toggle("on",i===n))}},true);
 function grid(){
   const list=PRODUCTS.filter(p=>(cat==="All"||p.cat===cat)&&`${p.name} ${p.pack||""}`.toLowerCase().includes(query));
-  $("grid").innerHTML=list.length?list.map(p=>`<article class="card"><div class="pic ${quantityLimit(p)?"":"out"}">${pic(p)}${ALT.has(p.id)&&p.imgs?'<span class="alt">Sample image</span>':''}${p.mrp>p.price?`<span class="tag">${Math.round(100-p.price*100/p.mrp)}% off</span>`:""}</div>
+  $("grid").innerHTML=list.length?list.map(p=>`<article class="card"><div class="pic ${quantityLimit(p)?"":"out"}">${pic(p)}${p.categoryIllustration?'<span class="alt">Category illustration</span>':ALT.has(p.id)&&p.imgs?'<span class="alt">Sample image</span>':''}${p.mrp>p.price?`<span class="tag">${Math.round(100-p.price*100/p.mrp)}% off</span>`:""}</div>
   <div class="info"><div class="name">${p.name}</div><div class="unit">${p.pack?`${p.pack} per pack<br>`:""}${availabilityLabel(p)}</div><div class="price">${money(p.price)}${p.mrp>p.price?` <s class="mrp">${money(p.mrp)}</s>`:""}</div>${ctl(p)}</div></article>`).join(""):`<div class="empty">No crackers match your search.</div>`;
 }
 const items=()=>Object.keys(cart).map(i=>({p:byId[i],q:cart[i]}));
